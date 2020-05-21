@@ -40,7 +40,7 @@ jobs:
       run: |
         cf api "$CF_API_URL"
         cf auth
-        cf target -o "$CF_ORG" -s " Isaiah Duncan"
+        cf target -o "$CF_ORG" -s "$CF_SPACE"
         cf push -p ./pal-tracker/pal-tracker.jar
       env:
         CF_API_URL: ${{ secrets.CF_API_URL }}
